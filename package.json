@@ -6,13 +6,20 @@
   "scripts": {
     "build": "tsc",
     "start": "yarn build && node dist/src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start:local": "ts-node-dev --transpile-only 'src/index.ts'",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint ./src ./test --ext .ts",
+    "lint:fix": "eslint ./src ./test --ext .ts --fix"
   },
   "author": "guihRovetta <guilherme020213@hotmail.com>",
   "license": "MIT",
   "devDependencies": {
     "@types/module-alias": "^2.0.0",
     "@types/node": "^14.6.2",
+    "@typescript-eslint/eslint-plugin": "^3.10.1",
+    "@typescript-eslint/parser": "^3.10.1",
+    "eslint": "^7.7.0",
+    "ts-node-dev": "^1.0.0-pre.61",
     "typescript": "^4.0.2"
   },
   "dependencies": {
