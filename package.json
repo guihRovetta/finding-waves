@@ -1,0 +1,8 @@
+{
+  "name": "finding-waves",
+  "version": "1.0.0",
+  "description": "Node.js API to finding waves",
+  "main": "index.js",
+  "author": "guihRovetta <guilherme020213@hotmail.com>",
+  "license": "MIT"
+}
