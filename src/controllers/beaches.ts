@@ -4,6 +4,7 @@ import mongoose from 'mongoose';
 
 import { Beach } from '@src/models/beach';
 import { authMiddleware } from '@src/middlewares/auth';
+import logger from '@src/logger';
 
 @Controller('beaches')
 @ClassMiddleware(authMiddleware)
@@ -15,6 +16,7 @@ export class BeachesController {
       const result = await beach.save();
       res.status(201).send(result);
     } catch (err) {
+      logger.error(err);
       if (err instanceof mongoose.Error.ValidationError) {
         res.status(422).send({ error: err.message });
       } else {
